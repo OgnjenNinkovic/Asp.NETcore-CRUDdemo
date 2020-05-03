@@ -5,15 +5,14 @@
 }
 
 <h4>Employee Register</h4>
-<hr/>
+<hr />
 
-<form method="get" asp-action="Index">
-    <p>
-        <input type="search" placeholder="Enter employee name or code..." value="@ViewData["Getemployeedetails"]" name="EmpSearch" style="width:500px"/>
-        <input type="submit" value="Search" class="btn btn-primary" />
-        <a asp-action="Index">Get All Employees</a>
-    </p>
-</form>
+<p>
+    <input type="search" placeholder="Enter employee name or code..." id="EmpSearch" style="width:500px" />
+
+    <input type="submit" id="SearchBtn" value="Search" class="btn btn-primary" /><br />
+</p>
+
 
 <table class="table table-hover">
     <thead>
@@ -38,25 +37,26 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.FullName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EmpCode)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Position)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.OfficeLocation)
-            </td>
-            <td>
-                <a asp-action="AddOrEdit" asp-route-id="@item.EmployeeId"><i class="fa fa-marker fa-lg"></i></a> 
-                <a asp-action="Delete" asp-route-id="@item.EmployeeId" class="text-danger ml-1" onclick="return confirm('Are you sure to delete this record?')"><i class="fa fa-trash-alt fa-lg"></i></a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FullName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EmpCode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Position)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OfficeLocation)
+                </td>
+                <td>
+                    <a asp-action="AddOrEdit" asp-route-id="@item.EmployeeId"><i class="fa fa-marker fa-lg"></i></a>
+                    <a asp-action="Delete" asp-route-id="@item.EmployeeId" class="text-danger ml-1" onclick="return confirm('Are you sure to delete this record?')"><i class="fa fa-trash-alt fa-lg"></i></a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

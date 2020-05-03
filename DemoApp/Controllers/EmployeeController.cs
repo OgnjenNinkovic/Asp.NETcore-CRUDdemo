@@ -21,27 +21,29 @@ namespace DemoApp.Controllers
 
        // GET: Employee
        [Authorize]
+       [HttpGet]
         public async Task<IActionResult> Index()
         {
             return View(await _context.Employees.ToListAsync());
         }
 
         [Authorize]
-        [HttpGet]
-        public async Task<IActionResult> Index(string EmpSearch)
+        [HttpPost]
+        public IActionResult Index(string SearchValue)
         {
-            ViewData["Getemployeedetails"] = EmpSearch;
 
             var q = from e in _context.Employees select e;
 
-            if (!string.IsNullOrEmpty(EmpSearch))
+            if (!string.IsNullOrEmpty(SearchValue))
             {
-               q= q.Where(e => e.FullName.Contains(EmpSearch) || e.EmpCode.Contains(EmpSearch));
+                q = q.Where(e => e.FullName.Contains(SearchValue) || e.EmpCode.Contains(SearchValue));
             }
 
 
+            //if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
+            //    return View(await q.AsNoTracking().ToListAsync());
 
-            return View(await q.AsNoTracking().ToListAsync());
+            return PartialView("SearchPartial", q.ToList());
 
         }
 

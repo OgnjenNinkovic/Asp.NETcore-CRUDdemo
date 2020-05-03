@@ -12952,11 +12952,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\OGI-PC\\Desktop\\Asp.netCoreDemoCrudAppTrenazer\\DemoApp\\DemoApp\\DemoApp.csproj",
+      "projectUniqueName": "C:\\Users\\OGI-PC\\OneDrive\\git-version-folder\\Asp.NET DemoCRUD\\DemoApp\\DemoApp.csproj",
       "projectName": "DemoApp",
-      "projectPath": "C:\\Users\\OGI-PC\\Desktop\\Asp.netCoreDemoCrudAppTrenazer\\DemoApp\\DemoApp\\DemoApp.csproj",
+      "projectPath": "C:\\Users\\OGI-PC\\OneDrive\\git-version-folder\\Asp.NET DemoCRUD\\DemoApp\\DemoApp.csproj",
       "packagesPath": "C:\\Users\\OGI-PC\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\OGI-PC\\Desktop\\Asp.netCoreDemoCrudAppTrenazer\\DemoApp\\DemoApp\\obj\\",
+      "outputPath": "C:\\Users\\OGI-PC\\OneDrive\\git-version-folder\\Asp.NET DemoCRUD\\DemoApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
